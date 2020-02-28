@@ -1,0 +1,32 @@
+{% block content %}
+
+
+<div>
+    <h1>{{ title }}</h1>
+{% for obj in object_list %}
+<div>
+  <div>
+    <div>
+      <div>
+        <table>
+            <tr>
+                <td>Book</td>
+                <td>Author</td>
+                <td>Action</td>
+            </tr>
+            <tr>
+                <td>{{ obj.title }}</td>
+                <td>{{ obj.author }}</td>
+                <td>"s"</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock content %}

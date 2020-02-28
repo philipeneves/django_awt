@@ -9,5 +9,5 @@ class BookSerializer(serializers.ModelSerializer):
 
 class BookUserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = BookUser
         fields = ["id"]

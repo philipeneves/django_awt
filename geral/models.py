@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Book(models.Model):
@@ -11,9 +12,8 @@ class Book(models.Model):
     description = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
 
-    class Meta:
-        db_table = 'book'
-        ordering = ['title']
+    def get_absolute_url(self):
+        return reverse('book_list')
 
     def __str__(self):
         return self.title

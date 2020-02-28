@@ -1,11 +1,14 @@
 from django.urls import path, include
 from rest_framework import routers 
-from geral import views
+from django.conf.urls import url
+from .views import (
+	book_list,
+	book_create,
+	book_detail,
+)
 
-router = routers.DefaultRouter()
-router.register(r'books', views.BookView, 'geral')
-router.register(r'books_users', views.BookUserView, 'geral')
-
-urlpatterns = [        
-    path('api/', include(router.urls))
+urlpatterns = [
+	url(r'^book_list$', book_list, name='book_list'),
+	url(r'^book_create/$', book_create),
+	url(r'^(?P<slug>[\w-]+)/$', book_detail, name='book_detail'),
 ]
