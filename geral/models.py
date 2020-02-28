@@ -20,4 +20,4 @@ class Book(models.Model):
 
 class BookUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    book = models.ForeignKey('Book', on_delete=models.PROTECT)
+    book = models.ForeignKey(Book, on_delete=models.PROTECT)
